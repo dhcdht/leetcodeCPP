@@ -3,6 +3,7 @@
 #import "1.hpp"
 #import "2.hpp"
 #import "3.hpp"
+#import "4.hpp"
 
 using namespace std;
 
@@ -20,6 +21,9 @@ int main() {
 
     Solution3 solution3;
     solution3.test();
+
+    Solution4 solution4;
+    solution4.test();
 
     return 0;
 }
