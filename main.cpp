@@ -17,6 +17,7 @@
 #import "15.hpp"
 #import "16.hpp"
 #import "17.hpp"
+#import "18.hpp"
 
 using namespace std;
 
@@ -76,6 +77,9 @@ int main() {
 
     Solution17 solution17;
     solution17.test();
+
+    Solution18 solutino18;
+    solutino18.test();
 
     return 0;
 }
