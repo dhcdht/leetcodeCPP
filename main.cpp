@@ -21,6 +21,7 @@
 #import "19.hpp"
 #import "20.hpp"
 #import "21.hpp"
+#import "22.hpp"
 
 using namespace std;
 
@@ -92,6 +93,9 @@ int main() {
 
     Solution21 solution21;
     solution21.test();
+
+    Solution22 solution22;
+    solution22.test();
 
     return 0;
 }
