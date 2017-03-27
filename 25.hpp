@@ -44,7 +44,7 @@ public:
         }
     }
 
-    void teset() {
+    void test() {
 
     }
 };

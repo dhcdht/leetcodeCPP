@@ -25,6 +25,7 @@
 #import "23.hpp"
 #import "24.hpp"
 #import "25.hpp"
+#import "26.hpp"
 
 using namespace std;
 
@@ -107,7 +108,10 @@ int main() {
     solution24.test();
 
     Solution25 solution25;
-    solution25.teset();
+    solution25.test();
+
+    Solution26 solution26;
+    solution26.test();
 
     return 0;
 }
