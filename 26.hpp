@@ -42,6 +42,6 @@ public:
         auto inputS = string("abcd");
         auto inputT = string("abcde");
         auto output = this->findTheDifference(inputS, inputT);
-        cout << "389. Find the Difference : " << output;
+        cout << "389. Find the Difference : " << output << endl;
     }
 };
