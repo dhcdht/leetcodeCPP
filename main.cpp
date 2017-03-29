@@ -32,6 +32,7 @@
 #import "30.hpp"
 #import "31.hpp"
 #import "32.hpp"
+#import "33.hpp"
 
 using namespace std;
 
@@ -136,6 +137,9 @@ int main() {
 
     Solution32 solution32;
     solution32.test();
+
+    Solution33 solution33;
+    solution33.test();
 
     return 0;
 }
