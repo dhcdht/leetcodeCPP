@@ -28,6 +28,7 @@
 #import "26.hpp"
 #import "27.hpp"
 #import "28.hpp"
+#import "29.hpp"
 
 using namespace std;
 
@@ -120,6 +121,10 @@ int main() {
 
     Solution28 solution28;
     solution28.test();
+
+    Solution29 solution29;
+    solution29.test();
+
 
     return 0;
 }
