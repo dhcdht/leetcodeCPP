@@ -41,6 +41,7 @@
 #import "39.hpp"
 #import "40.hpp"
 #import "41.hpp"
+#import "42.hpp"
 
 using namespace std;
 
@@ -172,6 +173,9 @@ int main() {
 
     Solution41 solution41;
     solution41.test();
+
+    Solution42 solution42;
+    solution42.test();
 
     return 0;
 }
