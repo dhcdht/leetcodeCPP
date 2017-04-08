@@ -25,13 +25,20 @@ class Solution44 {
 public:
     int minMoves(vector<int>& nums) {
         auto n = nums.size();
-        sort(nums.begin(), nums.end());
 
-        int result = 0;
-        int minNum = nums[0];
-        for (int i = 1; i < n; ++i) {
-            result += nums[i] - minNum;
+        int sum = 0;
+        int minNum = INT_MAX;
+        for (int i = 0; i < n; ++i) {
+            int curNum = nums[i];
+            if (curNum < minNum) {
+                minNum = curNum;
+            }
+
+            sum += curNum;
         }
+
+        int minSum = minNum * n;
+        int result = sum - minSum;
 
         return result;
     }
