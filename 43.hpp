@@ -13,7 +13,7 @@ Note: The length of given array won't exceed 10000.
  */
 #import <iostream>
 #import <vector>
-#import <list>
+#import <stack>
 
 using namespace std;
 
@@ -21,61 +21,24 @@ class Solution43 {
 public:
     vector<int> nextGreaterElements(vector<int>& nums) {
         auto n = nums.size();
-        if (n <= 1) {
-            return vector<int>(n, -1);
-        }
+        auto result = vector<int>(n, -1);
 
-        auto result = vector<int>(n, INT_MIN);
+        auto lastIndexs = stack<int>();
+        for (int i = 0; i < n * 2; ++i) {
+            int curNum = nums[i % n];
 
-        auto notFoundGreaterIndexs = list<int>();
-        int lastNum = nums[n - 1];
-        int maxNum = lastNum;
-        notFoundGreaterIndexs.push_back(n - 1);
-        for (int i = n-2; i >= 0; --i) {
-            int curNum = nums[i];
-            if (curNum < lastNum) {
-                result[i] = lastNum;
-                lastNum = curNum;
-            } else if (curNum == lastNum) {
-                int nextIndex = (i + 1) % n;
-                if (result[nextIndex] != INT_MIN) {
-                    result[i] = result[nextIndex];
+            while (!lastIndexs.empty()) {
+                int lastIndex = lastIndexs.top();
+                if (nums[lastIndex] < curNum) {
+                    result[lastIndex] = curNum;
+                    lastIndexs.pop();
                 } else {
-                    notFoundGreaterIndexs.push_back(i);
-                }
-            } else {
-                lastNum = curNum;
-                notFoundGreaterIndexs.push_back(i);
-                if (lastNum > maxNum) {
-                    maxNum = lastNum;
-                }
-            }
-        }
-
-        while (!notFoundGreaterIndexs.empty()) {
-            int baseIndex = notFoundGreaterIndexs.back();
-            int baseNum = nums[baseIndex];
-
-            if (baseNum == maxNum) {
-                result[baseIndex] = -1;
-                notFoundGreaterIndexs.pop_back();
-                continue;
-            }
-
-            for (int i = 1; i < n; ++i) {
-                int curIndex = (baseIndex + i) % n;
-                int curNum = nums[curIndex];
-                int curGreater = result[curIndex];
-
-                if (curNum > baseNum) {
-                    result[baseIndex] = curNum;
-                    notFoundGreaterIndexs.pop_back();
-                    break;
-                } else if (curGreater > baseNum) {
-                    result[baseIndex] = curGreater;
-                    notFoundGreaterIndexs.pop_back();
                     break;
                 }
+            }
+
+            if (i < n) {
+                lastIndexs.push(i);
             }
         }
 
