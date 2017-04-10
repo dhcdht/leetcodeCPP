@@ -49,6 +49,7 @@
 #import "47.hpp"
 #import "48.hpp"
 #import "49.hpp"
+#import "50.hpp"
 
 using namespace std;
 
@@ -204,6 +205,9 @@ int main() {
 
     Solution49 solution49;
     solution49.test();
+
+    Solution50 solution50;
+    solution50.test();
 
     return 0;
 }
