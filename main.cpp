@@ -56,6 +56,7 @@
 #import "54.hpp"
 #import "55.hpp"
 #import "56.hpp"
+#import "57.hpp"
 
 using namespace std;
 
@@ -232,6 +233,9 @@ int main() {
 
     Solution56 solution56;
     solution56.test();
+
+    Solution57 solution57;
+    solution57.test();
 
     return 0;
 }
