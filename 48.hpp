@@ -24,6 +24,7 @@ using namespace std;
 struct ListNode {
     int val;
     ListNode *next;
+
     ListNode(int x) : val(x), next(NULL) {}
 };
 
@@ -45,7 +46,7 @@ private:
 public:
     /** @param head The linked list's head.
         Note that the head is guaranteed to be not null, so it contains at least one node. */
-    Solution48(ListNode* head) {
+    Solution48(ListNode *head) {
         m_head = head;
     }
 
@@ -58,7 +59,7 @@ public:
         int result = m_head->val;
 
         while (node) {
-            int randomNum = random() % i;
+            int randomNum = rand() % i;
             // 它要和第 0 个交换的话，那么它被随机到了
             if (randomNum == 0) {
                 result = node->val;

@@ -23,11 +23,11 @@ using namespace std;
 
 class Solution44 {
 public:
-    int minMoves(vector<int>& nums) {
+    int minMoves(vector<int> &nums) {
         auto n = nums.size();
 
         int sum = 0;
-        int minNum = INT_MAX;
+        int minNum = INT32_MAX;
         for (int i = 0; i < n; ++i) {
             int curNum = nums[i];
             if (curNum < minNum) {
@@ -44,7 +44,7 @@ public:
     }
 
     void test() {
-        auto input = vector<int>({1,2,3});
+        auto input = vector<int>({1, 2, 3});
         auto result = this->minMoves(input);
         cout << "453. Minimum Moves to Equal Array Elements : " << result << endl;
     }

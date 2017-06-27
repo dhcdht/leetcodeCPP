@@ -32,15 +32,15 @@ using namespace std;
  */
 class Solution19 {
 public:
-    vector<int> largestValues(TreeNode* root) {
+    vector<int> largestValues(TreeNode *root) {
         auto result = vector<int>();
 
-        auto layer = stack<TreeNode*>();
+        auto layer = stack<TreeNode *>();
         if (root) {
             layer.push(root);
         }
-        int layerMax = INT_MIN;
-        auto nextLayer = stack<TreeNode*>();
+        int layerMax = INT32_MAX;
+        auto nextLayer = stack<TreeNode *>();
         while (!layer.empty()) {
             TreeNode *curNode = layer.top();
             layer.pop();
@@ -58,7 +58,7 @@ public:
 
             if (layer.empty()) {
                 result.push_back(layerMax);
-                layerMax = INT_MIN;
+                layerMax = INT32_MIN;
 
                 if (!nextLayer.empty()) {
                     layer = nextLayer;

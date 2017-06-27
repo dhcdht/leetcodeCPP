@@ -38,10 +38,10 @@ class Solution37 {
 private:
     bool m_isFirst = true;
     int m_lastVal = 0;
-    int m_currentMinimum = INT_MAX;
+    int m_currentMinimum = INT32_MAX;
 
 public:
-    int getMinimumDifference(TreeNode* root) {
+    int getMinimumDifference(TreeNode *root) {
         if (root->left) {
             this->getMinimumDifference(root->left);
         }
