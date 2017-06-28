@@ -47,7 +47,6 @@
 #import "45.hpp"
 #import "46.hpp"
 #import "47.hpp"
-#import "48.hpp"
 #import "49.hpp"
 #import "50.hpp"
 #import "51.hpp"
@@ -58,12 +57,11 @@
 #import "56.hpp"
 #import "57.hpp"
 #import "58.hpp"
-#import "59.hpp"
 #import "60.hpp"
 #import "61.hpp"
 #import "62.hpp"
-#import "63.hpp"
 #import "64.hpp"
+#import "65.hpp"
 
 using namespace std;
 
@@ -261,6 +259,11 @@ int main() {
 
     Solution64 solution64;
     solution64.test();
+
+    Solution65 solution65;
+    solution65.test();
+
+    getchar();
 
     return 0;
 }
