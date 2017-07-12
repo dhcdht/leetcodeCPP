@@ -80,6 +80,7 @@
 #import "81.hpp"
 #import "82.hpp"
 #import "83.hpp"
+#import "84.hpp"
 
 using namespace std;
 
@@ -334,6 +335,9 @@ int main() {
 
     Solution83 solution83;
     solution83.test();
+
+    Solution84 solution84;
+    solution84.test();
 
     getchar();
 
