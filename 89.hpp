@@ -73,7 +73,7 @@ public:
         // Find the max subarray no more than K
         set<int> accuSet;
         accuSet.insert(0);
-        int curSum = 0, curMax = INT_MIN;
+        int curSum = 0, curMax = INT32_MIN;
         for (int sum : array) {
             curSum += sum;
             set<int>::iterator it = accuSet.lower_bound(curSum - k);
