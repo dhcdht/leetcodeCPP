@@ -98,6 +98,7 @@
 #import "99.hpp"
 #import "100.hpp"
 #import "101.hpp"
+#import "102.hpp"
 
 using namespace std;
 
@@ -406,6 +407,9 @@ int main() {
 
     Solution101 solution101;
     solution101.test();
+
+    Solution102 solution102;
+    solution102.test();
 
     getchar();
 
