@@ -11,6 +11,7 @@ Input: 21
 Output: -1
  */
 #import <iostream>
+#import "helper.hpp"
 
 class Solution92 {
 public:
@@ -65,20 +66,16 @@ public:
     }
 
     void test() {
-        // -1
-//        auto n = 21;
-        // 21
-//        auto n = 12;
-        // 1243
-//        auto n = 1234;
-        // 12223233
-//        auto n = 12222333;
-        // 13222344
-//        auto n = 12443322;
-        // -1
-        auto n = 1999999999;
-
-        auto result = this->nextGreaterElement(n);
-        cout << "556. Next Greater Element III : " << result << endl;
+        vector<pair<int, int>> tests = {
+                {21,         -1},
+                {12,         21},
+                {1234,       1243},
+                {12222333,   12223233},
+                {12443322,   13222344},
+                {1999999999, -1},
+        };
+        runUnitTest("92. Next Greater Element III", tests, [&](auto input) {
+            return this->nextGreaterElement(input);
+        });
     }
 };

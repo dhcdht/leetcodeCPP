@@ -12,6 +12,7 @@ Another example is ")()())", where the longest valid parentheses substring is "(
 #import <stack>
 #import <map>
 #import <string>
+#import "helper.hpp"
 
 class Solution103 {
 public:
@@ -49,7 +50,7 @@ public:
         return maxlength;
     }
 
-    
+
     int longestValidParentheses2(string s) {
         stack<int> st;
         for (int i = 0; i < s.length(); ++i) {
@@ -93,18 +94,11 @@ public:
                  "((())))(())))())((()())()()((()((())))))((()(((((()((()))(()()(())))((()))()))())", 132
                 },
         };
-        cout << "32. Longest Valid Parentheses : " << endl;
-        for (auto item : tests) {
-            string key = item.first;
-            int value = item.second;
-            int result = this->longestValidParentheses(key);
-
-            string sign = result == value ? "✅" : "❌";
-            cout << "\t";
-            cout << sign;
-            cout << " " << key << " , " << value;
-            cout << " : " << result;
-            cout << endl;
-        }
+        runUnitTest("103. Longest Valid Parentheses (1)", tests, [&](auto input) {
+            return this->longestValidParentheses(input);
+        });
+        runUnitTest("103. Longest Valid Parentheses (2)", tests, [&](auto input) {
+            return this->longestValidParentheses2(input);
+        });
     }
 };

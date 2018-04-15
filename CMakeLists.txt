@@ -5,5 +5,5 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_FLAGS -Wno-deprecated)
 
 file(GLOB sources "*.hpp")
-set(SOURCE_FILES main.cpp ${sources})
+set(SOURCE_FILES main.cpp helper.hpp ${sources})
 add_executable(leetcodeCPP ${SOURCE_FILES})

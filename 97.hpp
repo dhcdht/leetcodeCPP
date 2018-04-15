@@ -11,6 +11,7 @@ Note: In the string, each word is separated by single space and there will not b
 #import <iostream>
 #import <vector>
 #import <string>
+#import "helper.hpp"
 
 class Solution97 {
 public:
@@ -57,8 +58,11 @@ public:
     }
 
     void test() {
-        string input = "Let's take LeetCode contest";
-        string output = this->reverseWords(input);
-        cout << "557. Reverse Words in a String III : " << output << std::endl;
+        vector<pair<string, string>> tests = {
+                {"Let's take LeetCode contest", "s'teL ekat edoCteeL tsetnoc"},
+        };
+        runUnitTest("97. Reverse Words in a String III", tests, [&](auto input) {
+            return this->reverseWords(input);
+        });
     }
 };
