@@ -17,6 +17,10 @@ Follow up: Could you improve it to O(n log n) time complexity?
 
 class Solution105 {
 public:
+    /*
+     * time     : n^2
+     * space    : n
+     */
     int lengthOfLIS(vector<int> &nums) {
         int n = nums.size();
         if (n <= 1) {
@@ -47,9 +51,9 @@ public:
     }
 
     void test() {
-        vector<pair<vector<int>, int>> tests = {
-                {{10, 9, 2, 5, 3, 7, 101, 18}, 4},
-                {{1,3,6,7,9,4,10,5,6}, 6},
+        vector < pair < vector < int > , int >> tests = {
+                {{10, 9, 2, 5, 3, 7, 101, 18},   4},
+                {{1,  3, 6, 7, 9, 4, 10,  5, 6}, 6},
         };
         runUnitTest("105 : 300. Longest Increasing Subsequence", tests, [&](auto input) {
             return this->lengthOfLIS(input);
