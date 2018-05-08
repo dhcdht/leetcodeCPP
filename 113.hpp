@@ -10,7 +10,6 @@ Follow-up:
 If there are n buckets and a pig drinking poison will die within m minutes, how many pigs (x) you need to figure out the "poison" bucket within p minutes? There is exact one bucket with poison.
  */
 #import <iostream>
-#import <math>
 
 class Solution113 {
 public:
