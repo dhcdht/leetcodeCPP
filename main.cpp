@@ -116,6 +116,7 @@
 #import "117.hpp"
 #import "118.hpp"
 #import "119.hpp"
+#import "120.hpp"
 
 using namespace std;
 
@@ -478,6 +479,9 @@ int main() {
 
     Solution119 solution119;
     solution119.test();
+
+    Solution120 solution120;
+    solution120.test();
 
     getchar();
 
