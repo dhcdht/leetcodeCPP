@@ -46,15 +46,6 @@ public:
             }
 
             int leftCupNumIndex = indexMap[leftCupNum];
-            int leftCupNumCupIndex = this->cupIndex(leftCupNumIndex);
-            if (row[leftCupNumCupIndex] == this->cupNum(rightNum)) {
-                row[rightIndex] = leftCupNum;
-                row[leftCupNumIndex] = rightNum;
-                indexMap[rightNum] = leftCupNumIndex;
-                result += 1;
-
-                continue;
-            }
 
             row[rightIndex] = leftCupNum;
             row[leftCupNumIndex] = rightNum;
