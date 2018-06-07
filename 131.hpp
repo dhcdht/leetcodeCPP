@@ -42,34 +42,42 @@ grid[i][j] is a permutation of [0, ..., N*N - 1].
 
 class Solution131 {
 public:
+    typedef pair<int, int> Coordinate;
+    typedef pair<int, Coordinate> Cell;
+
     int swimInWater(vector<vector<int>> &grid) {
         int n = grid.size();
         int ans = max(grid[0][0], grid[n - 1][n - 1]);
-        priority_queue<vector<int>, vector<vector<int>>, greater<vector<int>>> pq;
+        priority_queue<Cell, vector<Cell>, greater<Cell>> pq;
         vector<vector<int>> visited(n, vector<int>(n, 0));
         visited[0][0] = 1;
-        vector<int> dir({-1, 0, 1, 0, -1});
-        pq.push({ans, 0, 0});
+        vector<Coordinate> dir({{-1, 0},
+                                {0,  1},
+                                {1,  0},
+                                {0,  -1}});
+        pq.push({ans, {0, 0}});
         while (!pq.empty()) {
             auto cur = pq.top();
             pq.pop();
-            ans = max(ans, cur[0]);
+            ans = max(ans, cur.first);
             queue<pair<int, int>> myq;
-            myq.push({cur[1], cur[2]});
+            myq.push({cur.second.first, cur.second.second});
             while (!myq.empty()) {
                 auto p = myq.front();
                 myq.pop();
                 if (p.first == n - 1 && p.second == n - 1) {
                     return ans;
                 }
-                for (int i = 0; i < 4; ++i) {
-                    int r = p.first + dir[i], c = p.second + dir[i + 1];
-                    if (r >= 0 && r < n && c >= 0 && c < n && visited[r][c] == 0) {
-                        visited[r][c] = 1;
-                        if (grid[r][c] <= ans) {
-                            myq.push({r, c});
+                for (int i = 0; i < dir.size(); ++i) {
+                    Coordinate item = dir[i];
+                    Coordinate coord = {p.first + item.first, p.second + item.second};
+                    if (coord.first >= 0 && coord.first < n && coord.second >= 0 && coord.second < n
+                        && visited[coord.first][coord.second] == 0) {
+                        visited[coord.first][coord.second] = 1;
+                        if (grid[coord.first][coord.second] <= ans) {
+                            myq.push({coord.first, coord.second});
                         } else {
-                            pq.push({grid[r][c], r, c});
+                            pq.push({grid[coord.first][coord.second], coord});
                         }
                     }
                 }
