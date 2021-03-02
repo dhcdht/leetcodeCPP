@@ -129,6 +129,7 @@
 #import "130.hpp"
 #import "131.hpp"
 #import "132.hpp"
+#import "134.hpp"
 
 using namespace std;
 
@@ -531,7 +532,10 @@ int main() {
     Solution132 solution132;
     solution132.test();
 
-    getchar();
+    Solution134 solution134;
+    solution134.test();
+
+//    getchar();
 
     return 0;
 }
